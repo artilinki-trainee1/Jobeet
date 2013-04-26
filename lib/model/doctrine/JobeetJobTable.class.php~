@@ -1,0 +1,22 @@
+<?php
+
+class JobeetJobTable extends Doctrine_Table
+{
+
+$job = new JobeetJob();
+$job->setPosition('Web developer');
+$job->save();
+ 
+echo $job->getPosition();
+ 
+$job->delete();
+
+$category = new JobeetCategory();
+$category->setName('Programming');
+ 
+$job = new JobeetJob();
+$job->setCategory($category);
+
+
+
+}

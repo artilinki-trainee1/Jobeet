@@ -10,6 +10,9 @@
  */
 class jobActions extends sfActions
 {
+  
+
+  
   public function executeIndex(sfWebRequest $request)
   {
     $this->jobeet_jobs = Doctrine::getTable('JobeetJob')

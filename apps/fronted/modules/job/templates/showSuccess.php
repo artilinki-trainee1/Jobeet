@@ -1,3 +1,7 @@
+<!-- apps/frontend/modules/job/templates/showSuccess.php -->
+<?php use_stylesheet('job.css') ?>
+
+
 <table>
   <tbody>
     <tr>

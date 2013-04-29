@@ -1,6 +1,18 @@
-# apps/frontend/modules/job/config/view.yml
-indexSuccess:
-  stylesheets: [jobs.css]
+# apps/frontend/config/view.yml
+default:
+  http_metas:
+    content-type: text/html
  
-showSuccess:
-  stylesheets: [job.css]
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+ 
+  stylesheets:    [main.css]
+ 
+  javascripts:    []
+ 
+  has_layout:     true
+  layout:         layout

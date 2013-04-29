@@ -46,3 +46,13 @@ JobeetCategoryAffiliate:
   relations:
     JobeetCategory:  { onDelete: CASCADE, local: category_id, foreign: id }
     JobeetAffiliate: { onDelete: CASCADE, local: affiliate_id, foreign: id }
+    
+JobeetCategory:
+  actAs:
+    Timestampable: ~
+    Sluggable:
+      fields: [name]
+  columns:
+    name:
+      type: string(255)
+      notnull:  true

@@ -43,6 +43,6 @@ class JobeetJobTable extends Doctrine_Table
  
     $q->andWhere($alias . '.is_activated = ?', 1);
  
-  return $q;
+  return $q;//->execute();
   }
 }

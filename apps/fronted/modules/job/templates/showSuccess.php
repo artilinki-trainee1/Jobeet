@@ -4,7 +4,9 @@
 
 
  <?php if ($sf_request->getParameter('token') == $job->getToken()): ?>
+   
   <?php include_partial('job/admin', array('job' => $job)) ?>
+
 <?php endif ?>
 
 

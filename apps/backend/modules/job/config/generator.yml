@@ -1,0 +1,30 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           JobeetJob
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          jobeet_job
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+config:
+  actions: ~
+  fields:  ~
+  list:
+    title:   Job Management
+    layout:  stacked
+    display: [company, position, location, url, is_activated, email]
+    params:  |
+      %%is_activated%% <small>%%category_id%%</small> - %%company%%
+       (<em>%%email%%</em>) is looking for a %%=position%% (%%location%%)
+  filter:  ~
+  form:    ~
+  edit:
+    title: Editing Job "%%company%% is looking for a %%position%%"
+  new:
+    title: Job Creation
+    

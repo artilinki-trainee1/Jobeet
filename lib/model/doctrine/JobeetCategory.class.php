@@ -24,7 +24,10 @@ public function countActiveJobs()
   return $this->getActiveJobsQuery()->count();
 }
           
-
+  public function getLatestPost()
+  {
+    return $this->getActiveJobs(1)->getFirst();
+  }
 
 
 public function getActiveJobsQuery()

@@ -44,6 +44,10 @@
   <div class="meta">
     <small>posted on <?php echo $job->getDateTimeObject('created_at')->format('m/d/Y') ?></small>
   </div>
+  
+  <div class="feed">
+  <a href="<?php echo url_for('category', array('sf_subject' => $category, 'sf_format' => 'atom')) ?>">Feed</a>
+  </div>
  
   
 </div>

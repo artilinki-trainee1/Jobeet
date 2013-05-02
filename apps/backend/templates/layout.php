@@ -18,6 +18,7 @@
         </h1>
       </div>
  
+      <?php if ($sf_user->isAuthenticated()){ ?>
       <div id="menu">
         <ul>
           <li>
@@ -28,6 +29,7 @@
           </li>
         </ul>
       </div>
+      <?php } ?>
  
       <div id="content">
         <?php echo $sf_content ?>

@@ -12,6 +12,21 @@
  */
 class JobeetJob extends BaseJobeetJob
 {
+  
+      
+  public function extend($force = false)
+  {
+    if (!$force && !$this->expiresSoon())
+    {
+      return false;
+    }
+ 
+    $this->setExpiresAt(date('Y-m-d', time() + 86400 * sfConfig::get('app_active_days')));
+    $this->save();
+ 
+    return true;
+  }
+ 
 
   public function getCompanySlug()
 {

@@ -21,8 +21,8 @@ $this->categories = Doctrine_Core::getTable('JobeetCategory')->getWithJobs();
 
   public function executeShow(sfWebRequest $request)
   {
-      $this->job = Doctrine::getTable('JobeetJob')-> find($request->getParameter('id'));
- 
+      //$this->job = Doctrine::getTable('JobeetJob')-> find($request->getParameter('id'));
+      $this->job = $this->getRoute()->getObject();
     
   }
 

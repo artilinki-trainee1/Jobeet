@@ -11,15 +11,17 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
-config:
-  actions: ~
-  fields:  ~
-  list:
-    title:   Category Management
-    display: [=name, slug]
-  filter:  ~
-  form:    ~
-  edit:
-    title: Editing Category "%%name%%"
-  new:
-    title: New Category
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title:   Category Management
+        display: [=name, slug]
+        object_actions: {}     
+      filter:  
+        class: false
+      form:    ~
+      edit:
+        title: Editing Category "%%name%%"
+      new:
+        title: New Category

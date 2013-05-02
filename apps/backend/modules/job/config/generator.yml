@@ -11,20 +11,36 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
-config:
-  actions: ~
-  fields:  ~
-  list:
-    title:   Job Management
-    layout:  stacked
-    display: [company, position, location, url, is_activated, email]
-    params:  |
-      %%is_activated%% <small>%%category_id%%</small> - %%company%%
-       (<em>%%email%%</em>) is looking for a %%=position%% (%%location%%)
-  filter:  ~
-  form:    ~
-  edit:
-    title: Editing Job "%%company%% is looking for a %%position%%"
-  new:
-    title: Job Creation
-    
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        table_method: retrieveBackendJobList
+        title:   Job Management
+        layout: stacked
+        display: [company, position, location, url, is_activated, email]
+                 
+        params:  |
+          %%is_activated%% <small>%%category_id%%</small> - %%company%%
+           (<em>%%email%%</em>) is looking for a %%=position%% (%%location%%)
+        batch_actions:
+          _delete:    ~
+          extend:     ~  
+        object_actions:
+          extend:     ~
+          _edit:      ~
+          _delete:    ~
+        actions:
+          deleteNeverActivated: { label: Delete never activated jobs}
+      filter:  
+         display: [category_id, company, position, description, is_activated, is_public, email, expires_at]
+      form:    
+        display:
+          Content: [category_id, type, company, logo, url, position, location, description, how_to_apply, is_public, email]
+          Admin:   [_generated_token, is_activated, expires_at]
+        class: BackendJobeetJobForm  
+      edit:
+        title: Editing Job "%%company%% is looking for a %%position%%"
+      new:
+        title: Job Creation
+

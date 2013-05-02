@@ -23,6 +23,9 @@ $this->categories = Doctrine_Core::getTable('JobeetCategory')->getWithJobs();
   {
       //$this->job = Doctrine::getTable('JobeetJob')-> find($request->getParameter('id'));
       $this->job = $this->getRoute()->getObject();
+      
+      $this->getUser()->addJobToHistory($this->job);
+  
     
   }
 
@@ -108,7 +111,7 @@ public function executeExtend(sfWebRequest $request)
  
   $this->getUser()->setFlash('notice', sprintf('Your job validity has been extended until %s.', $job->getDateTimeObject('expires_at')->format('m/d/Y')));
  
-  $this->redirect('job_show_user', $job);
+  $this->redirect($this->generateUrl('job_show_user', $job));
 }
 
 }

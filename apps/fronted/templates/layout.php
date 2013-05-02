@@ -7,6 +7,8 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php include_javascripts() ?>
     <?php include_stylesheets() ?>
+    
+    
   </head>
   <body>
     <div id="container">
@@ -52,9 +54,20 @@
           </div>
         <?php endif; ?>
  
-        <div class="content">
-          <?php echo $sf_content ?>
-        </div>
+       <div id="job_history">
+  Recent viewed jobs:
+  <ul>
+    <?php foreach ($sf_user->getJobHistory() as $job): ?>
+      <li>
+        <?php echo link_to($job->getPosition().' - '.$job->getCompany(), 'job_show_user', $job) ?>
+      </li>
+    <?php endforeach ?>
+  </ul>
+</div>
+ 
+<div class="content">
+  <?php echo $sf_content ?>
+</div>
       </div>
  
       <div id="footer">

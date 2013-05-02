@@ -18,8 +18,8 @@
         </h1>
       </div>
  
-      <div id="menu">
-        <ul>
+  
+
         <?php if ($sf_user->isAuthenticated()): ?>
   <div id="menu">
     <ul>
@@ -31,8 +31,8 @@
   </div>
         <?php endif ?> 
    
-        </ul>
-      </div>
+
+     
  
       <div id="content">
         <?php echo $sf_content ?>
